@@ -3,10 +3,16 @@
 // Hamburger Menu
 const hamburger = document.querySelector(".js_hamburger");
 const navigation = document.querySelector(".js_navigation");
+const anchorLink = document.querySelector(".l_header-nav_link__sm");
 
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("is-active");
   navigation.classList.toggle("is-active");
+});
+
+anchorLink.addEventListener("click", () => {
+  hamburger.classList.remove("is-active");
+  navigation.classList.remove("is-active");
 });
 
 // Swiper

@@ -3,17 +3,22 @@
 // Hamburger Menu
 const hamburger = document.querySelector(".js_hamburger");
 const navigation = document.querySelector(".js_navigation");
-const anchorLink = document.querySelector(".l_header-nav_link__sm");
+const anchorLink = document.querySelectorAll(".l_header-nav_link__sm");
 
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("is-active");
   navigation.classList.toggle("is-active");
 });
 
-anchorLink.addEventListener("click", () => {
-  hamburger.classList.remove("is-active");
-  navigation.classList.remove("is-active");
-});
+let num = 0;
+
+while (num < 3) {
+  anchorLink[num].addEventListener("click", () => {
+    hamburger.classList.remove("is-active");
+    navigation.classList.remove("is-active");
+  });
+  num++;
+};
 
 // Swiper
 let mySwiper = new Swiper(".swiper", {
